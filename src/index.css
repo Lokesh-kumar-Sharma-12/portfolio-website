@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+/* 1. Base Layers: Global Styles aur Variables */
+@layer base {
+  :root {
+    --neon-blue: #00f3ff;
+    /* */
+    --neon-pink: #ff00ff;
+    /* */
+    --neon-green: #00ff88;
+    /* */
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    /* */
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+
+    scrollbar-width: none;
+    /* */
+    overflow-x: hidden;
+
+    -webkit-scrollbar:disabled;
+    
+    -webkit-scrollbar:none;
+     
+  }
+}
+
+
+/* 2. Utilities Layer: Custom Animations aur Effects */
+@layer utilities {
+
+  /* Grid Background Animation */
+  @keyframes gridMove {
+    0% {
+      transform: translate(0, 0);
+    }
+
+    100% {
+      transform: translate(50px, 50px);
+    }
+  }
+
+  /* */
+
+  /* Text Glow Animation */
+  @keyframes brandGlow {
+    from {
+      text-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff;
+    }
+
+    to {
+      text-shadow: 0 0 20px #00f3ff, 0 0 30px #00f3ff, 0 0 40px #00f3ff;
+    }
+  }
+
+  /* */
+
+  @keyframes blink {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(rgba(0, 243, 255, 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 243, 255, 0.3) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Utility Classes */
+  .animate-grid-move {
+    animation: gridMove 20s linear infinite;
+  }
+
+  /* */
+
+  .animate-brand-glow {
+    animation: brandGlow 2s ease-in-out infinite alternate;
+  }
+
+  /* */
+
+  .animate-blink {
+    animation: blink 1s infinite;
+  }
+
+
+  /* */
+
+  /* CRT Scanlines Effect (Jo App.css mein tha) */
+  .scanlines {
+    background: linear-gradient(to bottom, transparent 50%, rgba(0, 243, 255, 0.03) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+  }
+
+  /* */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
