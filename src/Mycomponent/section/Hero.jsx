@@ -15,7 +15,7 @@ const Hero = () => {
           </div>
 
           <div className="w-full ml-1.5 sm:top-0">
-            <h1 className='text-white sm:text-4xl md:text-5xl lg:text-8xl font-bold'>
+            <h1 className='text-white text-5xl lg:text-8xl font-bold'>
               Hi, I'm <span className="text-[#915EFF]">Lokesh kumar sharma</span>
             </h1>
             <h1 className={`text-white-100 mt-2  text-4xl font-bold`}>

@@ -56,34 +56,26 @@ const Navbar = () => {
         {/* Mobile Menu Dropdown */}
         {/* Fixed: top-16 ensures it sits exactly below the 16 height header */}
         <div className={`${isOpen ? 'flex' : 'hidden'} flex absolute top-16 left-0 w-screen bg-black/95 border-b-2 border-[#00ff88] p-2 gap-4 justify-evenly shadow-xl transition-all duration-500`}>
-          <NavLink
-            to='/'
-            onClick={closeMenu}
+          <a href="#home"
             className="text-[#00ff88] hover:text-white uppercase group relative py-1 border border-transparent hover:border-neonGreen hover:shadow-[0_0_10px_#00ff88] transition-all duration-300"
           >
             HOME
-          </NavLink>
-          <NavLink
-            to='/about'
-            onClick={closeMenu}
+          </a>
+          <a href="#about"
             className="text-[#00ff88] hover:text-white uppercase group relative py-1 border border-transparent hover:border-neonGreen hover:shadow-[0_0_10px_#00ff88] transition-all duration-300"
           >
             ABOUT
-          </NavLink>
-          <NavLink
-            to='/projects'
-            onClick={closeMenu}
+          </a>
+          <a href="#projects"
             className="text-[#00ff88] hover:text-white uppercase group relative py-1  border border-transparent hover:border-neonGreen hover:shadow-[0_0_10px_#00ff88] transition-all duration-300"
           >
             PROJECTS
-          </NavLink>
-          <NavLink
-            to='/contact'
-            onClick={closeMenu}
+          </a>
+          <a href="#contact"
             className="text-[#ff00ff] font-bold border border-[#ff00ff] rounded-lg p-1 bg-transparent hover:bg-[#ff00ff] hover:text-black transition-all duration-300 tracking-tighter shadow-[0_0_15px_#ff00ff]"
           >
             CONTACT
-          </NavLink>
+          </a>
         </div>
       </nav>
     </>

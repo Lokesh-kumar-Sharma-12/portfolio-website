@@ -7,8 +7,8 @@ const projects = [
         description: "A full-featured streaming platform clone with movie trailers and user authentication.",
         image: "/assets/Netflix India.PNG",
         tech: ["HTML", "CSS", "java script"],
-        liveLink: "https://google.com",
-        githubLink: "https://github.com",
+        // liveLink: "https://google.com",
+        githubLink: "https://github.com/Lokesh-kumar-Sharma-12/entertainment-app",
     },
     {
         id: 2,
@@ -16,8 +16,8 @@ const projects = [
         description: "Food delivery app interface with real-time cart updates and Item's detection features.",
         image: "/assets/Swiggy Clone.PNG",
         tech: ["HTML", "Tailwind CSS","java script"],
-        liveLink: "#",
-        githubLink: "#",
+        // liveLink: "#",
+        githubLink: "https://github.com/Lokesh-kumar-Sharma-12/food-delivery-app",
     },
     {
         id: 3,
@@ -25,8 +25,8 @@ const projects = [
         description: "A responsive e-commerce platform featuring product listings, shopping cart functionality, and checkout simulation.",
         image: "/assets/Shop online.PNG",
         tech: ["HTML","Tailwind CSS", "React"],
-        liveLink: "https://google.com",
-        githubLink: "https://github.com",
+        // liveLink: "https://google.com",
+        githubLink: "https://github.com/Lokesh-kumar-Sharma-12/Simple-online-shop",
     },
     {
         id: 4,
@@ -34,8 +34,8 @@ const projects = [
         description: "A stylish and interactive music player component with play/pause controls and song progress tracking.",
         image: "/assets/Music.PNG",
         tech: ["HTML", "Tailwind CSS", "java script"],
-        liveLink: "#",
-        githubLink: "#",
+        // liveLink: "#",
+        githubLink: "https://github.com/Lokesh-kumar-Sharma-12/Music-card-clone",
 
     },
     {
@@ -44,8 +44,8 @@ const projects = [
         description: "A productivity tool to organize daily tasks efficiently, featuring task addition, deletion, and status updates.",
         image: "/assets/Time to focus.PNG",
         tech: ["React", "Tailwind CSS", "React"],
-        liveLink: "#",
-        githubLink: "#",
+        // liveLink: "#",
+        githubLink: "https://github.com/Lokesh-kumar-Sharma-12/Task-manager/tree/main/Task%20manager",
     },
     {
         id: 6,
@@ -53,8 +53,8 @@ const projects = [
         description: "An interactive quiz application that tests user knowledge with multiple-choice questions and instant score tracking.",
         image: "/assets/Simple JS Quiz .PNG",
         tech: ["React", "Tailwind CSS", "Java script"],
-        liveLink: "#",
-        githubLink: "#",
+        // liveLink: "#",
+        githubLink: "https://github.com/Lokesh-kumar-Sharma-12/Simple-quiz-card",
     }
 ];
 
@@ -151,14 +151,14 @@ const Project = () => {
 
                                     {/* Buttons */}
                                     <div className="flex gap-4 mt-auto">
-                                        <a
+                                        {/* <a
                                             href={project.liveLink}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="flex-1 text-center py-2 px-4 rounded-lg bg-linear-to-r from-[#00FF88] to-[#00C6FF] text-black font-bold text-sm hover:opacity-90 transition-opacity shadow-lg shadow-[#00FF88]/20"
                                         >
                                             Live Demo
-                                        </a>
+                                        </a> */}
                                         <a
                                             href={project.githubLink}
                                             target="_blank"

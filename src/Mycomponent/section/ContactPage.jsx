@@ -64,7 +64,7 @@ const ContactPage = () => {
       setStatus({ type: '', message: '' });
 
       // Apne EmailJS keys yahan dalein
-      const serviceId = "service_0hy9kwb";      // EmailJS se copy karein
+      const serviceId = "service_vgta10g";      // EmailJS se copy karein
       const templateId = "template_rb8lioh";    // EmailJS se copy karein
       const publicKey = "dHINoTm_LWqsGCA92";      // EmailJS se copy karein
 
