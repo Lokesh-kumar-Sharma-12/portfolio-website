@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Logs, X } from 'lucide-react'; // Added X for the close icon
+import { Logs, X } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
@@ -24,6 +24,12 @@ const Navbar = () => {
               &gt;
             </span>
             HOME
+          </a>
+          <a href="#Credentials" className="text-[#00FF88] group relative px-4 py-2 text-md text-neonGreen uppercase tracking-widest border border-transparent hover:border-neonGreen hover:shadow-[0_0_10px_#00ff88] transition-all duration-300">
+            <span className="absolute -left-2.5 opacity-0 group-hover:opacity-100 group-hover:-left-1.5 group-hover:text-neonPink transition-all duration-300 font-bold">
+              &gt;
+            </span>
+            Credentials
           </a>
           <a href="#about" className="text-[#00FF88] group relative px-4 py-2 text-md text-neonGreen uppercase tracking-widest border border-transparent hover:border-neonGreen hover:shadow-[0_0_10px_#00ff88] transition-all duration-300">
             <span className="absolute -left-2.5 opacity-0 group-hover:opacity-100 group-hover:-left-1.5 group-hover:text-neonPink transition-all duration-300 font-bold">
@@ -56,22 +62,27 @@ const Navbar = () => {
         {/* Mobile Menu Dropdown */}
         {/* Fixed: top-16 ensures it sits exactly below the 16 height header */}
         <div className={`${isOpen ? 'flex' : 'hidden'} flex absolute top-16 left-0 w-screen bg-black/95 border-b-2 border-[#00ff88] p-2 gap-4 justify-evenly shadow-xl transition-all duration-500`}>
-          <a href="#home"
+          <a href="#home" onClick={closeMenu}
             className="text-[#00ff88] hover:text-white uppercase group relative py-1 border border-transparent hover:border-neonGreen hover:shadow-[0_0_10px_#00ff88] transition-all duration-300"
           >
             HOME
           </a>
-          <a href="#about"
+          <a href="#Credentials" onClick={closeMenu}
+            className="text-[#00ff88] hover:text-white uppercase group relative py-1 border border-transparent hover:border-neonGreen hover:shadow-[0_0_10px_#00ff88] transition-all duration-300"
+          >
+            Credentials
+          </a>
+          <a href="#about" onClick={closeMenu}
             className="text-[#00ff88] hover:text-white uppercase group relative py-1 border border-transparent hover:border-neonGreen hover:shadow-[0_0_10px_#00ff88] transition-all duration-300"
           >
             ABOUT
           </a>
-          <a href="#projects"
+          <a href="#projects" onClick={closeMenu}
             className="text-[#00ff88] hover:text-white uppercase group relative py-1  border border-transparent hover:border-neonGreen hover:shadow-[0_0_10px_#00ff88] transition-all duration-300"
           >
             PROJECTS
           </a>
-          <a href="#contact"
+          <a href="#contact" onClick={closeMenu}
             className="text-[#ff00ff] font-bold border border-[#ff00ff] rounded-lg p-1 bg-transparent hover:bg-[#ff00ff] hover:text-black transition-all duration-300 tracking-tighter shadow-[0_0_15px_#ff00ff]"
           >
             CONTACT

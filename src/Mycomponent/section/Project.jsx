@@ -4,36 +4,40 @@ const projects = [
     {
         id: 1,
         title: "Netflix Clone",
+        alt: "Netflix Clone project image by Lokesh Kumar Sharma",
         description: "A full-featured streaming platform clone with movie trailers and user authentication.",
-        image: "/assets/Netflix India.PNG",
-        tech: ["HTML", "CSS", "java script"],
+        image: "/assets/Netflix India.webp",
+        tech: ["HTML", "CSS", "JavaScript"],
         // liveLink: "https://google.com",
         githubLink: "https://github.com/Lokesh-kumar-Sharma-12/entertainment-app",
     },
     {
         id: 2,
         title: "Swiggy Clone",
+        alt: "Swiggy Clone project image by Lokesh Kumar Sharma",
         description: "Food delivery app interface with real-time cart updates and Item's detection features.",
-        image: "/assets/Swiggy Clone.PNG",
-        tech: ["HTML", "Tailwind CSS","java script"],
+        image: "/assets/Swiggy Clone.webp",
+        tech: ["HTML", "Tailwind CSS", "JavaScript"],
         // liveLink: "#",
         githubLink: "https://github.com/Lokesh-kumar-Sharma-12/food-delivery-app",
     },
     {
         id: 3,
         title: "Online shop system",
+        alt: "Online shop system project image by Lokesh Kumar Sharma",
         description: "A responsive e-commerce platform featuring product listings, shopping cart functionality, and checkout simulation.",
-        image: "/assets/Shop online.PNG",
-        tech: ["HTML","Tailwind CSS", "React"],
+        image: "/assets/Shop online.webp",
+        tech: ["HTML", "Tailwind CSS", "React"],
         // liveLink: "https://google.com",
         githubLink: "https://github.com/Lokesh-kumar-Sharma-12/Simple-online-shop",
     },
     {
         id: 4,
         title: "Music player card",
+        alt: "Music player card project image by Lokesh Kumar Sharma",
         description: "A stylish and interactive music player component with play/pause controls and song progress tracking.",
-        image: "/assets/Music.PNG",
-        tech: ["HTML", "Tailwind CSS", "java script"],
+        image: "/assets/Music.webp",
+        tech: ["HTML", "Tailwind CSS", "JavaScript"],
         // liveLink: "#",
         githubLink: "https://github.com/Lokesh-kumar-Sharma-12/Music-card-clone",
 
@@ -41,8 +45,9 @@ const projects = [
     {
         id: 5,
         title: "Task Manager",
+        alt: "Task Manager project image by Lokesh Kumar Sharma",
         description: "A productivity tool to organize daily tasks efficiently, featuring task addition, deletion, and status updates.",
-        image: "/assets/Time to focus.PNG",
+        image: "/assets/Time to focus.webp",
         tech: ["React", "Tailwind CSS", "React"],
         // liveLink: "#",
         githubLink: "https://github.com/Lokesh-kumar-Sharma-12/Task-manager/tree/main/Task%20manager",
@@ -50,9 +55,10 @@ const projects = [
     {
         id: 6,
         title: "Quiz App",
+        alt: "Quiz App project image by Lokesh Kumar Sharma",
         description: "An interactive quiz application that tests user knowledge with multiple-choice questions and instant score tracking.",
-        image: "/assets/Simple JS Quiz .PNG",
-        tech: ["React", "Tailwind CSS", "Java script"],
+        image: "/assets/Simple JS Quiz .webp",
+        tech: ["React", "Tailwind CSS", "JavaScript"],
         // liveLink: "#",
         githubLink: "https://github.com/Lokesh-kumar-Sharma-12/Simple-quiz-card",
     }
@@ -122,7 +128,7 @@ const Project = () => {
                                 <div className="h-48 overflow-hidden relative w-full">
                                     <img
                                         src={project.image}
-                                        alt={project.title}
+                                        alt={project.alt}
                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                     />
                                     <div className="absolute inset-0 bg-black/60 opacity-0 flex items-center justify-center"></div>
@@ -161,6 +167,7 @@ const Project = () => {
                                         </a> */}
                                         <a
                                             href={project.githubLink}
+                                            aria-label="Visit my GitHub Profile"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="flex-1 text-center py-2 px-4 rounded-lg border border-slate-600 hover:border-white hover:bg-slate-800 transition-all text-white text-sm"

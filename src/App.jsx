@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Aboutme from './Mycomponent/section/Aboutme';
 import Project from './Mycomponent/section/Project';
 import ContactPage from './Mycomponent/section/ContactPage';
+import Credentials from './Mycomponent/section/Credentials';
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
           </Routes> */}
         <section id="home">
           <Hero />
+        </section>
+
+        <section id="Credentials">
+          <Credentials />
         </section>
 
         <section id="about">

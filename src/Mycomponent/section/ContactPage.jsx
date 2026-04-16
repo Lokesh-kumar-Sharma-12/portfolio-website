@@ -1,98 +1,55 @@
 import React, { useState } from 'react';
-import emailjs from '@emailjs/browser'; // 1. Import EmailJS
+import emailjs from '@emailjs/browser';
 
 const ContactPage = () => {
   const [loading, setLoading] = useState(false);
-
-  // Form Data State
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState({ type: '', message: '' });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    if (errors[name]) {
-      setErrors({ ...errors, [name]: '' });
-    }
+    if (errors[name]) setErrors({ ...errors, [name]: '' });
   };
 
   const validate = () => {
     let tempErrors = {};
-    let isValid = true;
-
-    if (!formData.name.trim()) {
-      tempErrors.name = "Name likhna jaruri hai.";
-      isValid = false;
-    } else if (formData.name.length < 3) {
-      tempErrors.name = "Name kam se kam 3 letters ka hona chahiye.";
-      isValid = false;
-    }
-
+    if (!formData.name.trim()) tempErrors.name = "Name likhna jaruri hai.";
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!formData.email.trim()) {
-      tempErrors.email = "Email likhna jaruri hai.";
-      isValid = false;
-    } else if (!emailPattern.test(formData.email)) {
-      tempErrors.email = "Please ek valid email address likhein.";
-      isValid = false;
-    }
-
-    if (!formData.message.trim()) {
-      tempErrors.message = "Message khali nahi chhod sakte.";
-      isValid = false;
-    } else if (formData.message.length < 10) {
-      tempErrors.message = "Message thoda detail mein likhein (min 10 chars).";
-      isValid = false;
-    }
-
+    if (!emailPattern.test(formData.email)) tempErrors.email = "Sahi email dalein.";
+    if (formData.message.length < 10) tempErrors.message = "Message thoda bada likhein.";
     setErrors(tempErrors);
-    return isValid;
+    return Object.keys(tempErrors).length === 0;
   };
 
-  // 4. Submit Handler (UPDATED FOR EMAILJS)
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!validate()) return;
 
-    if (validate()) {
-      setLoading(true);
-      setStatus({ type: '', message: '' });
 
-      // Apne EmailJS keys yahan dalein
-      const serviceId = "service_vgta10g";      // EmailJS se copy karein
-      const templateId = "template_rb8lioh";    // EmailJS se copy karein
-      const publicKey = "dHINoTm_LWqsGCA92";      // EmailJS se copy karein
 
-      // Template params (jo naam aapne EmailJS template mein {{variable}} banaye hain)
-      const templateParams = {
-        name: formData.name,       // Ab ye {{name}} se match karega
-        email: formData.email,     // Ab ye {{email}} se match karega (Reply To ke liye)
-        message: formData.message, // Ye pehle se sahi tha
-        title: "New Query",        // Subject line ke liye (kyunki screenshot me {{title}} hai)
-      };
-
-      // Real Email Send Logic
-      emailjs.send(serviceId, templateId, templateParams, publicKey)
-        .then((response) => {
-          console.log('SUCCESS!', response.status, response.text);
-          setLoading(false);
-          setStatus({ type: 'success', message: 'Message successfully sent! I will contact you soon.' });
-          setFormData({ name: '', email: '', message: '' }); // Form clear
-        })
-        .catch((err) => {
-          console.log('FAILED...', err);
-          setLoading(false);
-          setStatus({ type: 'error', message: 'Something went wrong. Please try again later.' });
-        });
-
-    } else {
-      setStatus({ type: 'error', message: 'Please form mein errors check karein.' });
-    }
+    setLoading(true);
+    emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      {
+        from_name: formData.name,
+        to_name: "Lokesh Kumar Sharma",
+        from_email: formData.email,
+        message: formData.message,
+      },
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
+      .then(() => {
+        setLoading(false);
+        setStatus({ type: 'success', message: 'Message bhej diya gaya hai! Dhanyawad.' });
+        setFormData({ name: '', email: '', message: '' });
+      })
+      .catch(() => {
+        setLoading(false);
+        setStatus({ type: 'error', message: 'Kuch galat hua. Phir se koshish karein.' });
+      });
   };
 
   return (
