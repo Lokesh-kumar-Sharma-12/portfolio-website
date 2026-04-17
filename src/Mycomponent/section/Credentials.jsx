@@ -40,11 +40,10 @@ const Credentials = () => {
                 <motion.h2
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    className="text-4xl font-bold text-white mb-12 text-center"
+                    className="text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-[#00FF88] to-[#00C6FF] mb-4 mb-12 text-center"
                 >
-                    <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-[#00FF88] to-[#00C6FF] mb-4">
-                        Credentials
-                    </h2>        </motion.h2>
+                    Credentials
+                </motion.h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {achievements.map((item, index) => (
