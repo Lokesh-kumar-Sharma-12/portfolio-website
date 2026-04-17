@@ -70,13 +70,9 @@ const Navbar = () => {
           <a href="#Credentials" onClick={closeMenu}
             className="text-[#00ff88] hover:text-white uppercase group relative py-1 border border-transparent hover:border-neonGreen hover:shadow-[0_0_10px_#00ff88] transition-all duration-300"
           >
-            Credentials
-          </a>
-          <a href="#about" onClick={closeMenu}
-            className="text-[#00ff88] hover:text-white uppercase group relative py-1 border border-transparent hover:border-neonGreen hover:shadow-[0_0_10px_#00ff88] transition-all duration-300"
-          >
             ABOUT
           </a>
+
           <a href="#projects" onClick={closeMenu}
             className="text-[#00ff88] hover:text-white uppercase group relative py-1  border border-transparent hover:border-neonGreen hover:shadow-[0_0_10px_#00ff88] transition-all duration-300"
           >
