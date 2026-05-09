@@ -19,7 +19,7 @@ const Hero = () => {
         </div>
 
         {/* Text Content */}
-        <div className="z-10">
+        <div className="z-10 w-full">
           <h1 className="text-white font-black lg:text-[80px] sm:text-[60px] xs:text-[45px] text-[35px] lg:leading-[98px] leading-[1.2] mt-2">
             Hi, I'm <span className="text-[#915EFF] drop-shadow-[0_0_10px_rgba(145,94,255,0.5)]">Lokesh</span>
           </h1>
@@ -27,7 +27,7 @@ const Hero = () => {
           <div className="text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[26px] xs:text-[18px] text-[16px] lg:leading-[40px] leading-[30px] mt-4 max-w-lg">
             I develop {' '}
             <br className="sm:hidden" /> 
-            <span className="text-[#00FF88] font-bold"> {/* Typewriter Green hi rakha hai kyunki wo highlight point hai */}
+            <span className="text-[#00FF88] font-bold">
               <Typewriter
                 words={['3D Visuals', 'User Interfaces', 'Web Applications', 'Modern Portfolios']}
                 loop={true}
@@ -40,15 +40,21 @@ const Hero = () => {
             </span>
           </div>
 
-          {/* Mobile CTA: View Work Button */}
+          {/* Responsive CTAs: View Work & Download Resume */}
           <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
-            className="mt-10 lg:hidden"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.5 }}
+            className="mt-8 flex flex-wrap gap-4 items-center"
           >
-            <a href="#About" className="px-8 py-3 bg-[#915EFF] text-white rounded-lg font-bold shadow-[0_0_15px_rgba(145,94,255,0.4)] active:scale-95 transition-all inline-block">
-              About me
+           
+            {/* Secondary Button (Resume) */}
+            <a 
+              href="/LOKESH SHARMA RESUME.pdf" 
+              download
+              className="px-6 py-3 sm:px-8 sm:py-3 border-2 border-[#915EFF] text-[#dfd9ff] rounded-lg font-bold tracking-wide hover:bg-[#915EFF] hover:text-white active:scale-95 hover:-translate-y-1 transition-all duration-300 text-sm sm:text-base text-center bg-black/20 hover:bg-opacity-100"
+            >
+              Download Resume
             </a>
           </motion.div>
         </div>
@@ -66,6 +72,7 @@ const Hero = () => {
           </div>
         </a>
       </div>
+      
     </section>
   );
 };

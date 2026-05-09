@@ -28,8 +28,8 @@ const Aboutme = () => {
       alt: "React icon image",
       icon: "/assets/tech/reactjs.png",
     }, {
-      title: "Three js",
-      alt: "Three js icon image",
+      title: "Three.js",
+      alt: "Three.js icon image",
       icon: "/assets/tech/threejs.svg",
     },
   ];
