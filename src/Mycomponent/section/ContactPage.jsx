@@ -79,10 +79,10 @@ const ContactPage = () => {
               </div>
 
               <a
-                href="mailto:lokeshsharma9200@gmail.com"
+                href="mailto:lokeshsharma92006@gmail.com"
                 className="text-gray-300 break-all hover:text-white transition-colors duration-300"
               >
-                lokeshsharma9200@gmail.com
+                lokeshsharma92006@gmail.com
               </a>                </div>
             <div className="flex items-center space-x-4">
               <div className="p-3 bg-gray-900 rounded-full border border-[#00FF88] text-[#00FF88] shadow-[0_0_10px_#00ff88]">
